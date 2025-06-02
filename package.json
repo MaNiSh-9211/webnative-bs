@@ -1,0 +1,53 @@
+{
+  "name": "native-web-app",
+  "version": "1.0.0",
+  "description": "Webnative-Brocker",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "watch": "concurrently \"npm run watch:main\" \"npm run watch:electron\"",
+    "watch:main": "nodemon --exec electron main.js --ignore node_modules/",
+    "watch:electron": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "package": "electron-packager . --platform=win32 --arch=x64 --icon=cpu.ico --name=\"CPU Cache-m Driver\"",
+    "build": "npm run package"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "electron": "^34.0.0",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "mime-types": "^3.0.1",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.7.0",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "recursive-readdir": "^2.2.3"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "author": "Manish Kumar",
+  "build": {
+    "appId": "Webnative-Brocker",
+    "productName": "Webnative-Brocker",
+    "win": {
+      "icon": "icon.png"
+    },
+    "mac": {
+      "icon": "icon.png"
+    },
+    "linux": {
+      "icon": "icon.png"
+    }
+  },
+  "devDependencies": {
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2"
+  }
+}
